@@ -1,0 +1,6 @@
+{
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "python.venvPath": ".",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.useLibraryCodeForTypes": true
+}
