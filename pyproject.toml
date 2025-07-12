@@ -1,12 +1,17 @@
 [project]
-name = "nome_do_projeto"
+name = "AgendamentoMensagensWhatsapp"
 version = "0.1.0"
-description = "Descrição do projeto"
+description = "Projeto que fornece o backend do projeto para agendamento de mensagens para Whatapp"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "openai>=1.79.0",
+    "fastapi>=0.116.1",
+    "passlib[bcrypt]>=1.7.4",
     "python-dotenv>=1.1.0",
+    "python-jose[criptography,cryptography]>=3.5.0",
+    "python-multipart>=0.0.20",
+    "sqlalchemy>=2.0.41",
+    "uvicorn>=0.35.0",
 ]
 
 [dependency-groups]
@@ -41,7 +46,8 @@ addopts = '-p no:warnings'
 lint = 'ruff check'
 pre_format = 'ruff check --fix'
 format = 'ruff format'
-run = 'uv run meu_projeto/src/main.py'
+run = 'uvicorn main:app --reload'
+#run = 'uv run agendamento-mensagem-whatsapp/src/main.py'
 pre_test = 'task lint'
-test = 'pytest -s -x --cov=meu_projeto/src -vv'
+test = 'pytest -s -x --cov=agendamento-mensagem-whatsapp/src -vv'
 post_test = 'coverage html'
