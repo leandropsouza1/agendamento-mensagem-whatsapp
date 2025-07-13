@@ -58,7 +58,7 @@ agendamento_mensagem_whatsapp/
 
 ```
 
-##Para ver a Estrutura do Projeto
+## Para ver a Estrutura Atualizada do Projeto
 
 ```bash
 tree
