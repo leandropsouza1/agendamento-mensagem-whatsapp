@@ -10,14 +10,15 @@ import os
 
 
 # Adiciona o diretório raiz ao path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))) #NOTE: Adiciona o diretório raiz ao path
 
-from src.core.config import settings
-from src.db.base import Base  # importa o Base com os models registrados
+from src.core.config import settings #NOTE: Importa o sttings para pegar os dados
+
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URL) #NOTE: Configurando para carregar a URL
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -28,7 +29,9 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+
+from src.db.base import Base  #NOTE: Importa o Base com os models registrados
+target_metadata = Base.metadata #NOTE: Informa onde estão os MetaData
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
