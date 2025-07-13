@@ -2,5 +2,36 @@
   "python.defaultInterpreterPath": ".venv/bin/python",
   "python.venvPath": ".",
   "python.analysis.autoSearchPaths": true,
-  "python.analysis.useLibraryCodeForTypes": true
+  "python.analysis.useLibraryCodeForTypes": true,
+
+  "todo-tree.tree.showScanModeButton": true,
+  "todo-tree.general.tags": ["TODO", "FIXME", "BUG", "HACK", "NOTE"],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^)\\s*($TAGS)",
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.highlights.defaultHighlight": {
+    "type": "text",
+    "icon": "check",
+    "foreground": "#ffffff",
+    "background": "#ff8800"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "check",
+      "type": "text",
+      "foreground": "#ffffff",
+      "background": "#ff8800"
+    },
+    "FIXME": {
+      "icon": "alert",
+      "type": "text",
+      "foreground": "#ffffff",
+      "background": "#ff0000"
+    },
+    "NOTE": {
+      "icon": "info",
+      "type": "text",
+      "foreground": "#000000",
+      "background": "#00ffcc"
+    }
+  }
 }
