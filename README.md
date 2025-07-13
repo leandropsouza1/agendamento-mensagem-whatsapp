@@ -55,7 +55,7 @@ source .venv/bin/activate
 uv sync
 ```
 
-## 🤖 Taskipy
+## 🤖 Rodando o Projeto com [Taskipy](https://pypi.org/project/taskipy/1.0.0/)
 
 ### 🔍 Verificar o lint do código:
 
