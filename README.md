@@ -7,8 +7,8 @@ Este repositório define uma **estrutura base modular e produtiva para projetos 
 ## 📁 Estrutura do Projeto
 
 ```bash
-agendamento_mensagem_whatsapp/
-├── src/                          # Código-fonte da aplicação
+
+├── app/                          # Código-fonte da aplicação
 │   ├── api/                      # Rotas da API agrupadas por versão ou domínio
 │   │   └── v1/
 │   │       ├── __init__.py
