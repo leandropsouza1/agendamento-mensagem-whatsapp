@@ -7,18 +7,55 @@ Este repositório define uma **estrutura base modular e produtiva para projetos 
 ## 📁 Estrutura do Projeto
 
 ```bash
-.
-├── meu_projeto
-│   ├── src                  # Código-fonte da aplicação
-│   │   ├── app.py
-│   │   └── main.py          # Ponto de entrada do projeto (executável com python -m)
-│   └── test                 # Testes automatizados com pytest
-│       └── test_nome.py
-├── .env                     # Variáveis de ambiente (não deve ser versionado)
-├── .gitignore               # Arquivos ignorados pelo Git
-├── pyproject.toml           # Configuração principal do projeto: nome, versão, dependências e ferramentas
-├── README.md                # Documentação do Projeto
-└── uv.lock                  # Dependências com versões exatas, usado para reprodutibilidade com a ferramenta UV
+agendamento_mensagem_whatsapp/
+├── src/                          # Código-fonte da aplicação
+│   ├── api/                      # Rotas da API agrupadas por versão ou domínio
+│   │   └── v1/
+│   │       ├── __init__.py
+│   │       └── usuario.py        # Rotas relacionadas a usuários
+│
+│   ├── core/                     # Configurações e inicialização da aplicação
+│   │   ├── __init__.py
+│   │   ├── config.py             # Carrega variáveis do .env usando Pydantic
+│   │   └── settings.py           # Instância de configurações globais
+│
+│   ├── db/                       # Acesso ao banco de dados e migrations
+│   │   ├── __init__.py
+│   │   ├── base.py               # Base declarativa + import dos modelos
+│   │   ├── session.py            # Engine, SessionLocal e dependências
+│   │   └── migrations/           # Arquivos de migração gerados pelo Alembic
+│   │       ├── versions/         # Scripts de migração versionados
+│   │       ├── env.py            # Configura o ambiente do Alembic
+│   │       ├── script.py.mako    # Template dos scripts
+│   │       └── alembic.ini       # (opcional) Arquivo de config Alembic
+│
+│   ├── models/                   # Modelos SQLAlchemy usados no banco
+│   │   ├── __init__.py
+│   │   └── usuario.py            # Modelo de usuário
+│
+│   ├── schemas/                  # Schemas Pydantic para validação de entrada/saída
+│   │   ├── __init__.py
+│   │   └── usuario.py            # Schema de usuário (input/output)
+│
+│   ├── services/                 # Lógica de negócio da aplicação
+│   │   ├── __init__.py
+│   │   └── usuario_service.py    # Regras para manipulação de usuários
+│
+│   ├── dependencies.py           # Dependências reutilizáveis para injeção
+│   └── main.py                   # Entrypoint principal do FastAPI (app)
+│
+├── tests/                        # Testes unitários e de integração
+│   ├── __init__.py
+│   └── test_usuario.py           # Testes da funcionalidade de usuário
+│
+├── .env                          # Variáveis de ambiente sensíveis (não deve ser versionado)
+├── .gitignore                    # Ignora arquivos/pastas do Git
+├── README.md                     # Documentação do projeto
+├── pyproject.toml                # Configuração do projeto e dependências (uv/poetry)
+├── uv.lock                       # Lockfile das dependências instaladas
+└── .vscode/                      # (opcional) Configurações locais do VS Code
+
+
 ```
 
 ##Para ver a Estrutura do Projeto

@@ -25,6 +25,8 @@ class Usuario(Base):
         self.ativo = ativo
         self.admin = admin
 
+
+
 #TODO Criar um arquivo separado para classe Pedido
 class Pedido(Base):
     __tablename__ = "pedidos"
@@ -44,3 +46,20 @@ class Pedido(Base):
         self.status = status
         self.id_usuario = id_usuario
         self.preco = preco
+
+
+#TODO Criar um arquivo separado para classe ItemPedido
+class ItemPedido(Base):
+    id = Column("id", primary_key=True, autoincrement=True)
+    quantidade = Column("quantidade", Integer)
+    sabor = Column("sabor", String)
+    tamanho = Column("tamanho", String)
+    preco_unitario = Column("preco_unitario", DECIMAL)
+    pedido_id =  Column("id_pedido", ForeignKey("pedidos.id"))
+
+    def __init__(self, quantidade:int, sabor:str, tamanho:int, preco_unitario:Decimal, pedido_id:int):
+        self.quantidade = quantidade
+        self.sabor = sabor
+        self.tamanho = tamanho
+        self.preco_unitario = preco_unitario
+        self.pedido_id = pedido_id
