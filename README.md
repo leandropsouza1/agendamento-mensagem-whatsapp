@@ -86,3 +86,15 @@ task run
 ```bash
 task test
 ```
+
+## Gerenciando De Comentário No Código com [TODO Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+
+Os comentários em código podem (e devem) ser utilizado para destacar melhorias, correções, etc que precisa ser realizadas. Podem ser utilizadas as seguintes Tags para ajudar no enendimento dos comentários
+
+```python
+# TODO: Implementar autenticação JWT
+# FIXME: Corrigir validação de email
+# BUG: Corrigir erro ao salvar usuário
+# NOTE: Essa parte será refatorada na próxima sprint
+# HACK: Solução temporária para timeout
+```
