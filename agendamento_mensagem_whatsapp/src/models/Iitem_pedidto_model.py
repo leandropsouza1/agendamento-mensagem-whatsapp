@@ -13,4 +13,11 @@ class ItemPedido(Base):
     sabor = Column("sabor", String)
     tamanho = Column("tamanho", String)
     preco_unitario = Column("preco_unitario", DECIMAL)
-    pedido = 
+    pedido = Column("pedido", ForeignKey("pedido.id"))
+
+    def __init(self, quantidade: int, sabor:str, tamanho:str, preco_unitario:Decimal, pedido:int):
+        self.quantidade = quantidade
+        self.sabor = sabor
+        self.tamanho = tamanho
+        self.preco_unitario = preco_unitario
+        self.pedido = pedido
