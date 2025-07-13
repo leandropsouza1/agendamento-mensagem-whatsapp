@@ -64,6 +64,24 @@ Este repositório define uma **estrutura base modular e produtiva para projetos 
 tree
 ```
 
+## 📦 Gerenciamento de Pacotes com [uv](https://github.com/astral-sh/uv)
+
+Este repositório utiliza o `uv` como gerenciador de pacotes ultrarrápido para ambientes virtuais.
+
+> **Pré-requisitos**: Python ≥ 3.8 e `uv` instalado globalmente
+
+### 🔧 Como instalar o `uv`:
+
+```bash
+curl -Ls https://astral.sh/uv/install.sh | sh
+```
+
+ou via `pipx`:
+
+```bash
+pipx install uv
+```
+
 ## Ajuste a estrutura com o nome do seu projeto
 
 - Renomeie a pasta `meu_projeto` com o nome real do seu projeto.
