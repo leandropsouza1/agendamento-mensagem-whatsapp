@@ -5,6 +5,16 @@ from sqlalchemy import pool
 
 from alembic import context
 
+import sys
+import os
+
+
+# Adiciona o diretório raiz ao path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../')))
+
+from src.core.config import settings
+from src.db.base import Base  # importa o Base com os models registrados
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
