@@ -1,5 +1,6 @@
+
 from pydantic import BaseModel, EmailStr
-from typing import Optional
+
 
 # Schema base: campos comuns entre entrada e saída
 class UsuarioBase(BaseModel):
@@ -7,9 +8,11 @@ class UsuarioBase(BaseModel):
     email: EmailStr
     senha: str
 
+
 # Schema para criação (entrada)
 class UsuarioCreate(UsuarioBase):
     pass  # Herda tudo de UsuarioBase
+
 
 # Schema para leitura (saída)
 class UsuarioRead(UsuarioBase):

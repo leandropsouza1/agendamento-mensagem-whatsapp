@@ -46,11 +46,20 @@ addopts = '-p no:warnings'
 
 
 [tool.taskipy.tasks]
+#Formatacao
 lint = 'ruff check'
 pre_format = 'ruff check --fix'
 format = 'ruff format'
-run = 'uvicorn main:app --reload'
-#run = 'uv run agendamento-mensagem-whatsapp/src/main.py'
+
+#testes
 pre_test = 'task lint'
 test = 'pytest -s -x --cov=agendamento-mensagem-whatsapp/src -vv'
 post_test = 'coverage html'
+
+#Migration
+migration_init = 'alembic revision --autogenerate -m "Cria Banco"'
+migration = 'alembic upgrade head'
+
+#Rodar o Projeto
+run_dev = 'uvicorn app.main:app --reload'
+#run = 'uv run agendamento-mensagem-whatsapp/src/main.py'
